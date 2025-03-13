@@ -19,7 +19,7 @@ export default function About() {
             laborum.
           </p>
         </div>
-        <div className="bg-gray-200 h-64 rounded-lg"></div>
+        <div className="bg-gray-500 h-64 rounded-lg"></div>
       </div>
     </div>
   )

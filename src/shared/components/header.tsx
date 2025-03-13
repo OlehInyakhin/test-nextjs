@@ -2,7 +2,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import React, { useEffect, useState } from "react"
-import { Menu, User, ShoppingCart, X } from "lucide-react"
+import { Menu, User, X } from "lucide-react"
 import { Button } from "@/shared/ui/button"
 import {
   NavigationMenu,

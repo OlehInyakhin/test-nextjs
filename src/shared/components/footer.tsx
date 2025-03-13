@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { Phone, Mail, MapPin } from "lucide-react"
 import { Button } from "@/shared/ui/button"
 import { Input } from "@/shared/ui/input"
 import PhoneIcon from "@/assets/icons/phone.inline.svg"
