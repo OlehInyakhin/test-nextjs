@@ -2,7 +2,7 @@
 
 @plugin "tailwindcss-animate";
 
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
   --color-background: var(--background);
@@ -84,7 +84,7 @@
   --container-width: 1280px;
 }
 
-.dark, [data-theme="dark"] {
+.dark {
   --background: oklch(0.141 0.005 285.823);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.141 0.005 285.823);
@@ -131,7 +131,6 @@
   .form-control {
     @apply w-full border-0 border-b-2 border-gray-300 rounded-none shadow-none py-2 px-0 focus:outline-none focus:border-black focus-visible:ring-0;
   }
-
   textarea.form-control {
     @apply h-10 min-h-10 resize-none;
   }
@@ -143,5 +142,10 @@
   }
   body {
     @apply bg-gray-100 text-foreground;
+  }
+  [data-slot="navigation-menu-link"],
+  [data-slot="navigation-menu-trigger"],
+  [data-slot="button"] {
+    @apply transition-colors cursor-pointer;
   }
 }

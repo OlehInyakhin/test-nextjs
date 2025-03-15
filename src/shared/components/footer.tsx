@@ -1,11 +1,12 @@
+"use client"
 import Link from "next/link"
 import { Button } from "@/shared/ui/button"
 import { Input } from "@/shared/ui/input"
-import PhoneIcon from "@/assets/icons/phone.inline.svg"
-import MailIcon from "@/assets/icons/email.inline.svg"
-import MapPinIcon from "@/assets/icons/map-pin.inline.svg"
+// import PhoneIcon from "@/assets/icons/phone.svg"
+// import MailIcon from "@/assets/icons/email.svg"
+// import MapPinIcon from "@/assets/icons/map-pin.svg"
 
-export default function Footer() {
+export function Footer() {
   return (
     <footer className="bg-black text-white pt-12 pb-6">
       <div className="container mx-auto px-6">
@@ -20,15 +21,15 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Reach us</h3>
             <ul className="space-y-4">
               <li className="flex sm:items-center max-sm:flex-col">
-                <PhoneIcon className="mr-4 min-w-6" />
+                {/* <PhoneIcon className="mr-4 min-w-6" /> */}
                 <a href="tel:+10123456789" className="hover:underline">+1012 3456 789</a>
               </li>
               <li className="flex sm:items-center max-sm:flex-col">
-                <MailIcon className="mr-4 min-w-6" />
+                {/* <MailIcon className="mr-4 min-w-6" /> */}
                 <a href="mailto:demo@gmail.com" className="hover:underline">demo@gmail.com</a>
               </li>
               <li className="flex items-start max-sm:flex-col">
-                <MapPinIcon className="mr-4 mt-1 min-w-6" />
+                {/* <MapPinIcon className="mr-4 mt-1 min-w-6" /> */}
                 <span>132 Dartmouth Street Boston, Massachusetts 02156 United States</span>
               </li>
             </ul>

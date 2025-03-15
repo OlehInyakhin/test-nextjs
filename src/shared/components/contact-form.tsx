@@ -1,5 +1,4 @@
 "use client"
-
 import { SiX, SiInstagram, SiDiscord } from '@icons-pack/react-simple-icons';
 import Image from "next/image"
 import { Input } from "@/shared/ui/input"
@@ -11,9 +10,9 @@ import { useForm, Controller } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
 import paperPlaneSrc from "@/assets/images/letter_send.png"
-import PhoneIcon from "@/assets/icons/phone.inline.svg"
-import MailIcon from "@/assets/icons/email.inline.svg"
-import MapPinIcon from "@/assets/icons/map-pin.inline.svg"
+import PhoneIcon from "@/assets/icons/phone.svg"
+import MailIcon from "@/assets/icons/email.svg"
+import MapPinIcon from "@/assets/icons/map-pin.svg"
 
 // Define the form schema with Zod
 const formSchema = z.object({
@@ -28,7 +27,7 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>
 
-export default function ContactForm() {
+export function ContactForm() {
   const {
     register,
     handleSubmit,

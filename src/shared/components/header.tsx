@@ -13,9 +13,9 @@ import {
   NavigationMenuTrigger,
 } from "@/shared/ui/navigation-menu"
 import { useIsMobile } from "@/hooks/use-mobile"
-import CartIcon from "@/assets/icons/cart.inline.svg"
+import CartIcon from "@/assets/icons/cart.svg"
 
-export default function Header() {
+export function Header() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const isMobile = useIsMobile();
