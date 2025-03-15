@@ -14,6 +14,7 @@ import {
 } from "@/shared/ui/navigation-menu"
 import { useIsMobile } from "@/hooks/use-mobile"
 import CartIcon from "@/assets/icons/cart.svg"
+import { cn } from "@/lib/utils"
 
 export function Header() {
   const pathname = usePathname();
@@ -43,13 +44,13 @@ export function Header() {
           className="flex flex-col transition-all origin-top items-stretch max-md:h-[calc(100vh-68px)] max-md:scale-y-[0] data-[expanded=true]:scale-y-[1] md:flex-row md:items-center gap-8 py-4 md:py-0 max-md:absolute top-full left-0 right-0 bg-white max-md:data-[expanded=true]:bg-black md:bg-white text-white md:text-inherit "
         >
           <NavigationMenu viewport={!isMobile} orientation={isMobile ? 'vertical' : 'horizontal'} className="max-w-full items-stretch max-md:flex-col max-md:justify-start max-md:overflow-y-auto max-md:max-h-[calc(100vh-160px)]">
-            <NavigationMenuList className="flex-col items-stretch px-4 md:px-0 md:flex-row gap-3 md:gap-6">
+            <NavigationMenuList className="flex-col items-stretch px-4 md:px-0 md:flex-row gap-1 lg:gap-6">
               <NavigationMenuItem>
-                <NavigationMenuLink>
-                  <Link href="/" legacyBehavior passHref>
+                <Link href="/" legacyBehavior passHref>
+                  <NavigationMenuLink className="md:px-4">
                     Home
-                  </Link>
-                </NavigationMenuLink>
+                  </NavigationMenuLink>
+                </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="max-md:justify-start max-md:w-full bg-transparent max-md:px-2!">Features</NavigationMenuTrigger>
@@ -131,22 +132,22 @@ export function Header() {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/blog" legacyBehavior passHref>
-                  <NavigationMenuLink>Blog</NavigationMenuLink>
+                  <NavigationMenuLink className="md:px-4">Blog</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/shop" legacyBehavior passHref>
-                  <NavigationMenuLink>Shop</NavigationMenuLink>
+                  <NavigationMenuLink className="md:px-4">Shop</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/about" legacyBehavior passHref>
-                  <NavigationMenuLink>About</NavigationMenuLink>
+                  <NavigationMenuLink className="md:px-4">About</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/contact" legacyBehavior passHref>
-                  <NavigationMenuLink>Contact</NavigationMenuLink>
+                  <NavigationMenuLink className="md:px-4">Contact</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
             </NavigationMenuList>

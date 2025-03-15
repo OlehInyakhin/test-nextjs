@@ -12,7 +12,7 @@ export function Footer() {
       <div className="container mx-auto px-6">
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold mb-6">Logo Here</h2>
-          <div className="w-full h-px bg-gray-700 mb-8"></div>
+          <div className="w-full h-px bg-white/20 mb-8"></div>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-5 xl:grid-cols-[300px_1fr_1fr_1fr_400px] gap-8">
           {/* Reach us */}
