@@ -14,7 +14,6 @@ import {
 } from "@/shared/ui/navigation-menu"
 import { useIsMobile } from "@/hooks/use-mobile"
 import CartIcon from "@/assets/icons/cart.svg"
-import { cn } from "@/lib/utils"
 
 export function Header() {
   const pathname = usePathname();
