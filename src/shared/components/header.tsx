@@ -45,9 +45,11 @@ export function Header() {
           <NavigationMenu viewport={!isMobile} orientation={isMobile ? 'vertical' : 'horizontal'} className="max-w-full items-stretch max-md:flex-col max-md:justify-start max-md:overflow-y-auto max-md:max-h-[calc(100vh-160px)]">
             <NavigationMenuList className="flex-col items-stretch px-4 md:px-0 md:flex-row gap-3 md:gap-6">
               <NavigationMenuItem>
-                <Link href="/" legacyBehavior passHref>
-                  <NavigationMenuLink>Home</NavigationMenuLink>
-                </Link>
+                <NavigationMenuLink>
+                  <Link href="/" legacyBehavior passHref>
+                    Home
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="max-md:justify-start max-md:w-full bg-transparent max-md:px-2!">Features</NavigationMenuTrigger>
@@ -55,7 +57,7 @@ export function Header() {
                   <ul className="md:grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                     <li className="row-span-3">
                       <NavigationMenuLink asChild>
-                        <a
+                        <Link
                           className="flex md:h-full w-full select-none flex-col justify-end rounded-md md:bg-gradient-to-b from-muted/50 to-muted p-3 md:p-6 no-underline outline-none focus:shadow-md"
                           href="/features"
                         >
@@ -65,12 +67,12 @@ export function Header() {
                               Explore all our features and capabilities
                             </p>
                           )}
-                        </a>
+                        </Link>
                       </NavigationMenuLink>
                     </li>
                     <li>
                       <NavigationMenuLink asChild>
-                        <a
+                        <Link
                           href="/features/analytics"
                           title="Analytics"
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
@@ -79,12 +81,12 @@ export function Header() {
                           {!isMobile && (
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">Track user behavior and optimize your product</p>
                           )}
-                        </a>
+                        </Link>
                       </NavigationMenuLink>
                     </li>
                     <li>
                       <NavigationMenuLink asChild>
-                        <a
+                        <Link
                           href="/features/automation"
                           title="Automation"
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
@@ -93,12 +95,12 @@ export function Header() {
                           {!isMobile && (
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">Automate repetitive tasks and workflows</p>
                           )}
-                        </a>
+                        </Link>
                       </NavigationMenuLink>
                     </li>
                     <li>
                       <NavigationMenuLink asChild>
-                        <a
+                        <Link
                           href="/features/collaboration"
                           title="Collaboration"
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
@@ -107,12 +109,12 @@ export function Header() {
                           {!isMobile && (
                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">Work together with your team in real-time</p>
                           )}
-                        </a>
+                        </Link>
                       </NavigationMenuLink>
                     </li>
                     <li className="col-span-2">
                       <NavigationMenuLink asChild>
-                        <a
+                        <Link
                           href="/features/integrations"
                           title="Integrations"
                           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
@@ -121,7 +123,7 @@ export function Header() {
                           {!isMobile && (
                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">Connect with your favorite tools and services</p>
                           )}
-                        </a>
+                        </Link>
                       </NavigationMenuLink>
                     </li>
                   </ul>

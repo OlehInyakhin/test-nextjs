@@ -32,7 +32,7 @@ export function ContactForm() {
     register,
     handleSubmit,
     control,
-    formState: { errors },
+    formState: { errors, isSubmitted },
   } = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -47,8 +47,6 @@ export function ContactForm() {
 
   const onSubmit = (data: FormValues) => {
     console.log("Form submitted:", data)
-    // Here you would typically send the data to your backend
-    alert("Message sent! (This is a dummy implementation)")
   }
 
   const subjectOptions = [
@@ -116,88 +114,93 @@ export function ContactForm() {
             </div>
             {/* Contact Form */}
             <div className="bg-white p-8">
-              <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <Label htmlFor="firstName" className="text-sm text-gray-600">
-                    First Name
-                  </Label>
-                  <Input id="firstName" {...register("firstName")} className={`form-control ${errors.firstName ? "border-red-500" : ""}`} />
-                  {errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName.message}</p>}
-                </div>
-                <div>
-                  <Label htmlFor="lastName" className="text-sm text-gray-600">
-                    Last Name
-                  </Label>
-                  <Input id="lastName" {...register("lastName")} className={`form-control ${errors.lastName ? "border-red-500" : ""}`} />
-                  {errors.lastName && <p className="text-red-500 text-xs mt-1">{errors.lastName.message}</p>}
-                </div>
-                <div>
-                  <Label htmlFor="email" className="text-sm text-gray-600">
-                    Email
-                  </Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    {...register("email")}
-                    className={`form-control ${errors.email ? "border-red-500" : ""}`}
-                  />
-                  {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
-                </div>
-                <div>
-                  <Label htmlFor="phone" className="text-sm text-gray-600">
-                    Phone Number
-                  </Label>
-                  <Input id="phone" type="tel" {...register("phone")} className="form-control" />
-                </div>
-                <div className="md:col-span-2">
-                  <Label className="text-sm text-gray-600 mb-3">Select Subject?</Label>
-                  <div className="grid grid-cols-2 gap-4 mt-2">
-                    <Controller
-                      control={control}
-                      name="subjects"
-                      render={({ field }) => (
-                        <>
-                          {subjectOptions.map((option) => (
-                            <div key={option.id} className="flex items-center space-x-2">
-                              <Checkbox
-                                id={option.id}
-                                checked={field.value.includes(option.id)}
-                                onCheckedChange={(checked) => {
-                                  if (checked) {
-                                    field.onChange([...field.value, option.id])
-                                  } else {
-                                    field.onChange(field.value.filter((value) => value !== option.id))
-                                  }
-                                }}
-                              />
-                              <Label htmlFor={option.id}>{option.label}</Label>
-                            </div>
-                          ))}
-                        </>
-                      )}
-                    />
-                  </div>
-                  {errors.subjects && <p className="text-red-500 text-xs mt-1">{errors.subjects.message}</p>}
-                </div>
-                <div className="md:col-span-2">
-                  <Label htmlFor="message" className="text-sm text-gray-600">
-                    Message
-                  </Label>
-                  <Textarea
-                    id="message"
-                    {...register("message")}
-                    placeholder="Write your message.."
-                    rows={4}
-                    className={`form-control ${errors.message ? "border-red-500" : ""}`}
-                  />
-                  {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
-                </div>
-                <div className="md:col-span-2 flex justify-end">
-                  <Button type="submit" size="lg" className="py-6 min-w-full md:min-w-[214px] transition-colors">
-                    Send Message
-                  </Button>
-                </div>
-              </form>
+              {isSubmitted
+                ? <p className="text-3xl text-center bold">Message sent!</p>
+                : (
+                  <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <Label htmlFor="firstName" className="text-sm text-gray-600">
+                        First Name
+                      </Label>
+                      <Input id="firstName" {...register("firstName")} className={`form-control ${errors.firstName ? "border-red-500" : ""}`} />
+                      {errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName.message}</p>}
+                    </div>
+                    <div>
+                      <Label htmlFor="lastName" className="text-sm text-gray-600">
+                        Last Name
+                      </Label>
+                      <Input id="lastName" {...register("lastName")} className={`form-control ${errors.lastName ? "border-red-500" : ""}`} />
+                      {errors.lastName && <p className="text-red-500 text-xs mt-1">{errors.lastName.message}</p>}
+                    </div>
+                    <div>
+                      <Label htmlFor="email" className="text-sm text-gray-600">
+                        Email
+                      </Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        {...register("email")}
+                        className={`form-control ${errors.email ? "border-red-500" : ""}`}
+                      />
+                      {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
+                    </div>
+                    <div>
+                      <Label htmlFor="phone" className="text-sm text-gray-600">
+                        Phone Number
+                      </Label>
+                      <Input id="phone" type="tel" {...register("phone")} className="form-control" />
+                    </div>
+                    <div className="md:col-span-2">
+                      <Label className="text-sm text-gray-600 mb-3">Select Subject?</Label>
+                      <div className="grid grid-cols-2 gap-4 mt-2">
+                        <Controller
+                          control={control}
+                          name="subjects"
+                          render={({ field }) => (
+                            <>
+                              {subjectOptions.map((option) => (
+                                <div key={option.id} className="flex items-center space-x-2">
+                                  <Checkbox
+                                    id={option.id}
+                                    checked={field.value.includes(option.id)}
+                                    onCheckedChange={(checked) => {
+                                      if (checked) {
+                                        field.onChange([...field.value, option.id])
+                                      } else {
+                                        field.onChange(field.value.filter((value) => value !== option.id))
+                                      }
+                                    }}
+                                  />
+                                  <Label htmlFor={option.id}>{option.label}</Label>
+                                </div>
+                              ))}
+                            </>
+                          )}
+                        />
+                      </div>
+                      {errors.subjects && <p className="text-red-500 text-xs mt-1">{errors.subjects.message}</p>}
+                    </div>
+                    <div className="md:col-span-2">
+                      <Label htmlFor="message" className="text-sm text-gray-600">
+                        Message
+                      </Label>
+                      <Textarea
+                        id="message"
+                        {...register("message")}
+                        placeholder="Write your message.."
+                        rows={4}
+                        className={`form-control ${errors.message ? "border-red-500" : ""}`}
+                      />
+                      {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
+                    </div>
+                    <div className="md:col-span-2 flex justify-end">
+                      <Button type="submit" size="lg" className="py-6 min-w-full md:min-w-[214px] transition-colors">
+                        Send Message
+                      </Button>
+                    </div>
+                  </form>
+                )
+              }
               {/* Decorative Plane Image */}
               <div className="flex justify-end mt-8 -mb-12">
                 <Image src={paperPlaneSrc} width={266} height={217} alt="Paper plane" />

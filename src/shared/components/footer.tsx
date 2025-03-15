@@ -14,7 +14,6 @@ export function Footer() {
           <h2 className="text-2xl font-bold mb-6">Logo Here</h2>
           <div className="w-full h-px bg-gray-700 mb-8"></div>
         </div>
-
         <div className="grid grid-cols-2 md:grid-cols-5 xl:grid-cols-[300px_1fr_1fr_1fr_400px] gap-8">
           {/* Reach us */}
           <div className="md:col-span-2 xl:col-span-1">
@@ -39,13 +38,13 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">Company</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/about">About</Link>
+                <Link className="hover:underline" href="/about">About</Link>
               </li>
               <li>
-                <Link href="/contact">Contact</Link>
+                <Link className="hover:underline" href="/contact">Contact</Link>
               </li>
               <li>
-                <Link href="/blog">Blogs</Link>
+                <Link className="hover:underline" href="/blog">Blogs</Link>
               </li>
             </ul>
           </div>
@@ -54,16 +53,16 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/privacy-policy">Privacy Policy</Link>
+                <Link className="hover:underline" href="/privacy-policy">Privacy Policy</Link>
               </li>
               <li>
-                <Link href="/terms-services">Terms & Services</Link>
+                <Link className="hover:underline" href="/terms-services">Terms & Services</Link>
               </li>
               <li>
-                <Link href="/terms-of-use">Terms of Use</Link>
+                <Link className="hover:underline" href="/terms-of-use">Terms of Use</Link>
               </li>
               <li>
-                <Link href="/refund-policy">Refund Policy</Link>
+                <Link className="hover:underline" href="/refund-policy">Refund Policy</Link>
               </li>
             </ul>
           </div>
@@ -72,13 +71,13 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/techlabz-keybox">Techlabz Keybox</Link>
+                <Link className="hover:underline" href="/techlabz-keybox">Techlabz Keybox</Link>
               </li>
               <li>
-                <Link href="/downloads">Downloads</Link>
+                <Link className="hover:underline" href="/downloads">Downloads</Link>
               </li>
               <li>
-                <Link href="/forum">Forum</Link>
+                <Link className="hover:underline" href="/forum">Forum</Link>
               </li>
             </ul>
           </div>
