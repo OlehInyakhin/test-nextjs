@@ -32,7 +32,7 @@ export function ContactForm() {
     register,
     handleSubmit,
     control,
-    formState: { errors, isSubmitted },
+    formState: { errors, isSubmitSuccessful },
   } = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -137,7 +137,7 @@ export function ContactForm() {
             </div>
             {/* Contact Form */}
             <div className="bg-white p-8">
-              {isSubmitted ? (
+              {isSubmitSuccessful ? (
                 <p className="text-3xl text-center bold">Message sent!</p>
               ) : (
                 <form
