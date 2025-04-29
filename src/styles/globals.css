@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @plugin "tailwindcss-animate";
 
@@ -134,9 +134,9 @@
   textarea.form-control {
     @apply h-10 min-h-10 resize-none;
   }
-  [data-slot="navigation-menu-link"],
-  [data-slot="navigation-menu-trigger"],
-  [data-slot="button"] {
+  [data-slot='navigation-menu-link'],
+  [data-slot='navigation-menu-trigger'],
+  [data-slot='button'] {
     @apply transition-colors cursor-pointer;
   }
 }
