@@ -1,0 +1,21 @@
+<svg
+  fill="none"
+  height="209"
+  viewBox="0 0 208 209"
+  width="208"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <circle
+    cx="162.5"
+    cy="160.5"
+    fill="#1A1A1A"
+    r="134.5"
+  />
+  <circle
+    cx="69"
+    cy="69"
+    fill="#484848"
+    fillOpacity="0.5"
+    r="69"
+  />
+</svg>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useGetProducts } from '@/api/shop';
+import { useGetProducts } from '@/api/products';
 import ProductCard from '@/shared/components/product-card';
 
 export default function ProductsList() {

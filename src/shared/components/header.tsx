@@ -148,8 +148,8 @@ export function Header() {
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link legacyBehavior passHref href="/shop">
-                  <NavigationMenuLink className="md:px-4">Shop</NavigationMenuLink>
+                <Link legacyBehavior passHref href="/products">
+                  <NavigationMenuLink className="md:px-4">Products</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>

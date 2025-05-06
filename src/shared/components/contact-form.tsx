@@ -14,6 +14,7 @@ import paperPlaneSrc from '@/assets/images/letter_send.png';
 import PhoneIcon from '@/assets/icons/phone.svg';
 import MailIcon from '@/assets/icons/email.svg';
 import MapPinIcon from '@/assets/icons/map-pin.svg';
+import Circles from '@/assets/images/circles.svg';
 
 // Define the form schema with Zod
 const formSchema = z.object({
@@ -110,29 +111,7 @@ export function ContactForm() {
               </div>
               {/* Decorative Circles */}
               <div className="absolute bottom-0 right-0 -z-1 max-w-[33%] [&_svg]:max-w-full">
-                <svg
-                  fill="none"
-                  height="209"
-                  viewBox="0 0 208 209"
-                  width="208"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    className="animate-pulse"
-                    cx="162.5"
-                    cy="160.5"
-                    fill="#1A1A1A"
-                    r="134.5"
-                  />
-                  <circle
-                    className="animate-pulse delay-500"
-                    cx="69"
-                    cy="69"
-                    fill="#484848"
-                    fillOpacity="0.5"
-                    r="69"
-                  />
-                </svg>
+                <Circles className="[&>circle]:animate-pulse [&>circle]:odd:delay-500" />
               </div>
             </div>
             {/* Contact Form */}

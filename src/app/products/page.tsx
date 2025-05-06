@@ -1,9 +1,9 @@
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
 
-import { ShopQueryKeys, getProducts } from '@/api/shop';
+import { ShopQueryKeys, getProducts } from '@/api/products';
 import ProductsList from '@/shared/components/products-list';
 
-export default async function Shop() {
+export default async function Products() {
   const queryClient = new QueryClient();
 
   await queryClient.fetchQuery({
